@@ -42,17 +42,17 @@ end
 %% Plot the euler estimated model values
 figure;
 plot3(E(:,1), E(:,2), E(:,3));
-xlabel('x');
-ylabel('y');
-zlabel('z');
+xlabel('z_1');
+ylabel('z_2');
+zlabel('z_3');
 title('Lorenz 63 - Euler Method');
 grid on;
 
 %% Plot the runge-kutta estimated model values
 figure;
 plot3(RK(:,1), RK(:,2), RK(:,3));
-xlabel('x');
-ylabel('y');
-zlabel('z');
+xlabel('z_1');
+ylabel('z_2');
+zlabel('z_3');
 title('Lorenz 63 - Runge-Kutta');
 grid on;

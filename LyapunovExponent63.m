@@ -6,7 +6,7 @@ d = 3;
 
 % time
 dt = 0.01;
-tspan = 350;
+tspan = 500;
 T = [0 tspan];
 timeframe = 0:dt:tspan;
 
@@ -25,7 +25,7 @@ Z(:,1) = Z0 + dt * randn(size(Z0));
 
 % Fundamental matrix
 XN = zeros(d,d,length(timeframe));
-XN(:,:,1) = eye(d); % random initial values (eye(d))
+XN(:,:,1) = eye(d);
 [Q, R] = mgs3(XN(:,:,1));
 
 AQ = zeros(d,d,length(timeframe));
@@ -55,6 +55,7 @@ xlim([0 length(timeframe)])
 title("Approximating the LES")
 ylabel("Estimates of LEs")
 xlabel("Time frame")
+% xlim([0,35000])
 
 for i = 1:d
     lambdas = log(squeeze(R(i,i,:)))/dt;
@@ -66,4 +67,3 @@ for i = 1:d
     plot(lambdas)
     yline(final_lambda(i), 'LineWidth', 2)
 end
-

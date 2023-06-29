@@ -23,7 +23,7 @@ Z(:,1) = Z0 + dt * randn(size(Z0));
 
 % Fundamental matrix
 XN = zeros(d,d,length(timeframe));
-XN(:,:,1) = eye(d); % random initial values (eye(d))
+XN(:,:,1) = eye(d); 
 [Q, R] = mgs3(XN(:,:,1));
 
 AQ = zeros(d,d,length(timeframe));
@@ -53,6 +53,7 @@ xlim([0 length(timeframe)])
 title("Approximating the LES")
 ylabel("Estimates of LEs")
 xlabel("Time frame")
+xlim([0,20000])
 
 for i = 1:d
     lambdas = log(squeeze(R(i,i,:)))/dt;

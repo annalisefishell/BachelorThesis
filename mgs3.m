@@ -1,7 +1,10 @@
 function [A,R] = mgs3(A)
 %
-% For a 3-tensor A, apply modified Gram-Schmidt to A(:,:,j) for each j.
+%   For a 3-tensor A, apply modified Gram-Schmidt to A(:,:,j) for each j.
 %
+%   Provided by Svetlana Dubinkina
+%
+
 [M,p,N] = size(A);
 R = zeros(p,p,N);
 for j=1:p

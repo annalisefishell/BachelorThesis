@@ -1,8 +1,14 @@
 function [xdot, Av] = Lorenz96(x,v,F,N)
-%LORENZ96 implements the Lorenz 96 model in either first or second order
-%   With constant forcing F and dimension N
+% LORENZ96 Computes the vector field and the Jacobian product for the
+% Lorenz 96 model.
+%
+%   Uses x as the input, v the value of interest to multiple the jacobian 
+%   with. F and N are constants of the model.
+%
+%   Outputs the vector field xdot = f(x), and the Jacobian product
+%   Av = A*v, where A = f'(x)
+% 
 
-% calculate vector field
 xdot = zeros(N,1);
 
 for i=3:N-1
